@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
 const BRAND_CONTEXT = `
-BRAND: AQUALA — Premium D2C residential water filtration. Subsidiary of MDC Water (28-year B2B industrial water engineering). Targeting $1M/month by end of 2026.
-VOICE: Premium but approachable. Science-backed authority without being clinical. Confident, warm, educational. Never fear-mongering — always empowering.
+BRAND: AQUALA - Premium D2C residential water filtration. Subsidiary of MDC Water (28-year B2B industrial water engineering). Targeting $1M/month by end of 2026.
+VOICE: Premium but approachable. Science-backed authority without being clinical. Confident, warm, educational. Never fear-mongering - always empowering.
 PRODUCTS: AQUALA Pure (whole-home, $1,499), AQUALA Essential (under-sink, $899), AQUALA Flow (shower filter, $249), Replacement filters ($89-149).
 AUDIENCE: Homeowners 28-55, health-conscious, premium home investment mindset. US/Australian market.
-COMPETITORS: Berkey, Pentair, SpringWell, iSpring — AQUALA differentiates on 28yr engineering heritage and premium experience.
+COMPETITORS: Berkey, Pentair, SpringWell, iSpring - AQUALA differentiates on 28yr engineering heritage and premium experience.
 `;
 
 const PLATFORM_SPECS = {
@@ -47,31 +47,31 @@ const PLATFORM_SPECS = {
 const PRESET_BRIEFS = [
   {
     id: 1, name: "New Customer Acquisition",
-    brief: "Generate ads to acquire new customers for AQUALA's whole-home water filtration systems. Focus on the premium quality, 28 years of engineering heritage from MDC Water, and the health benefits of filtered water throughout the entire home. Target homeowners 28-55 who invest in premium home infrastructure. Angle: transformation — what life looks like when every tap in your home delivers pure water.",
+    brief: "Generate ads to acquire new customers for AQUALA's whole-home water filtration systems. Focus on the premium quality, 28 years of engineering heritage from MDC Water, and the health benefits of filtered water throughout the entire home. Target homeowners 28-55 who invest in premium home infrastructure. Angle: transformation - what life looks like when every tap in your home delivers pure water.",
     angle: "Transformation",
     product: "AQUALA Pure ($1,499)",
   },
   {
     id: 2, name: "Competitor Conquest",
-    brief: "Create ads targeting people researching Berkey, Pentair, and other water filter brands. Highlight what makes AQUALA different: industrial-grade engineering in a consumer product, whole-home coverage vs single-point filters, and the MDC Water pedigree. Don't trash competitors — position AQUALA as the premium upgrade they didn't know existed. Angle: authority and engineering credibility.",
+    brief: "Create ads targeting people researching Berkey, Pentair, and other water filter brands. Highlight what makes AQUALA different: industrial-grade engineering in a consumer product, whole-home coverage vs single-point filters, and the MDC Water pedigree. Don't trash competitors - position AQUALA as the premium upgrade they didn't know existed. Angle: authority and engineering credibility.",
     angle: "Competitor Conquest",
     product: "AQUALA Pure + Essential",
   },
   {
     id: 3, name: "Filter Replacement Campaign",
-    brief: "Drive recurring revenue through filter replacement ads. Target existing AQUALA customers approaching their 6-12 month replacement window. Emphasize the importance of regular replacement for water quality, make it easy with subscription options. Angle: maintenance and care — protecting the investment they've already made.",
+    brief: "Drive recurring revenue through filter replacement ads. Target existing AQUALA customers approaching their 6-12 month replacement window. Emphasize the importance of regular replacement for water quality, make it easy with subscription options. Angle: maintenance and care - protecting the investment they've already made.",
     angle: "Retention / Replenishment",
     product: "Replacement Filters ($89-149)",
   },
   {
-    id: 4, name: "Seasonal — Summer Water Quality",
-    brief: "Summer seasonal campaign highlighting increased water usage and quality concerns during hot months. Position AQUALA as essential for summer: better-tasting water for hydration, cleaner water for cooking, better shower experience. Target homeowners thinking about home improvement during summer. Angle: seasonal relevance — summer is when water quality matters most.",
+    id: 4, name: "Seasonal - Summer Water Quality",
+    brief: "Summer seasonal campaign highlighting increased water usage and quality concerns during hot months. Position AQUALA as essential for summer: better-tasting water for hydration, cleaner water for cooking, better shower experience. Target homeowners thinking about home improvement during summer. Angle: seasonal relevance - summer is when water quality matters most.",
     angle: "Seasonal",
     product: "Full Range",
   },
   {
     id: 5, name: "UGC-Style Social Proof",
-    brief: "Generate ad concepts designed to look and feel like organic user-generated content. Focus on real customer moments: unboxing, installation, first taste test, showing visitors, before/after water tests. These should feel authentic, not polished. Angle: social proof — real people, real results. Designed for TikTok and Instagram Reels primarily.",
+    brief: "Generate ad concepts designed to look and feel like organic user-generated content. Focus on real customer moments: unboxing, installation, first taste test, showing visitors, before/after water tests. These should feel authentic, not polished. Angle: social proof - real people, real results. Designed for TikTok and Instagram Reels primarily.",
     angle: "UGC / Social Proof",
     product: "AQUALA Pure + Essential",
   },
@@ -108,15 +108,15 @@ async function generateAds(brief, platforms) {
   const platformInstructions = platforms.map(p => {
     const spec = PLATFORM_SPECS[p];
     if (p === "meta") {
-      return `META ADS — Generate 3 ad variants:
-For each variant provide: headline (max 40 chars), primary_text (max 125 chars), description (max 30 chars), cta (from: ${spec.formats[0].cta_options.join(", ")}), format (Single Image, Carousel, or Story/Reel), placement_recommendation (from: ${spec.placements.join(", ")}), image_direction (describe the visual concept for the ad image in detail — mood, composition, subject, style), image_prompt (a detailed DALL-E 3 prompt to generate the ad image — photorealistic commercial photography style, describe exact scene, lighting, composition, mood, subjects, and product placement. Always include "commercial product photography" or "lifestyle advertisement photography" in the prompt. Never include any text, words, logos, or watermarks in the image. Max 300 chars.), hook (the first 3 words that stop the scroll).`;
+      return `META ADS - Generate 3 ad variants:
+For each variant provide: headline (max 40 chars), primary_text (max 125 chars), description (max 30 chars), cta (from: ${spec.formats[0].cta_options.join(", ")}), format (Single Image, Carousel, or Story/Reel), placement_recommendation (from: ${spec.placements.join(", ")}), image_direction (describe the visual concept for the ad image in detail - mood, composition, subject, style), image_prompt (a detailed Nano Banana 2 prompt to generate the ad image - photorealistic commercial photography style, describe exact scene, lighting, composition, mood, subjects, and product placement. Always include "commercial product photography" or "lifestyle advertisement photography" in the prompt. Never include any text, words, logos, or watermarks in the image. Max 300 chars.), hook (the first 3 words that stop the scroll).`;
     }
     if (p === "google") {
-      return `GOOGLE ADS — Generate 1 Responsive Search Ad set:
+      return `GOOGLE ADS - Generate 1 Responsive Search Ad set:
 Provide: headlines (array of 10 headlines, each max 30 chars), descriptions (array of 4 descriptions, each max 90 chars), sitelinks (array of 4 sitelinks with title max 25 chars and description max 35 chars), display_url_path (2 segments, max 15 chars each like "water-filters/whole-home"), keyword_themes (5 suggested keyword themes to target).`;
     }
     if (p === "tiktok") {
-      return `TIKTOK ADS — Generate 2 video script concepts:
+      return `TIKTOK ADS - Generate 2 video script concepts:
 For each provide: hook (first 2 seconds text/action that stops the scroll), script (full scene-by-scene script with timing markers like [0:00-0:03], [0:03-0:08] etc, 15-30 seconds total), ad_text (max 100 chars, the text that appears with the ad), cta (from: ${spec.formats[0].cta_options.join(", ")}), format_style (UGC, Product Demo, Before/After, Testimonial, Educational), music_suggestion (mood/genre for background), text_overlays (array of on-screen text with timing).`;
     }
     return "";
@@ -248,7 +248,7 @@ const MetaAdCard = ({ ad, index }) => {
           {imgLoading ? (
             <>
               <div style={{ width: 36, height: 36, borderRadius: "50%", border: `3px solid ${t.border}`, borderTopColor: t.blue, animation: "spin 1s linear infinite" }} />
-              <div style={{ fontSize: 12, color: t.sec }}>Generating image with DALL·E 3...</div>
+              <div style={{ fontSize: 12, color: t.sec }}>Generating image with Nano Banana 2...</div>
             </>
           ) : (
             <>
@@ -269,7 +269,7 @@ const MetaAdCard = ({ ad, index }) => {
                   🎨 Generate Image
                 </button>
               )}
-              {imgError && <div style={{ fontSize: 11, color: t.red }}>Image generation failed — check OpenAI key in Vercel</div>}
+              {imgError && <div style={{ fontSize: 11, color: t.red }}>Image generation failed - check Gemini key in Vercel</div>}
             </>
           )}
         </div>
@@ -382,7 +382,7 @@ const TikTokScriptCard = ({ script, index }) => (
 
     {/* Hook */}
     <div style={{ background: t.red + "10", border: `1px solid ${t.red}25`, borderRadius: 8, padding: 12, marginBottom: 12 }}>
-      <div style={{ fontSize: 11, color: t.red, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 4 }}>🪝 Hook — First 2 Seconds</div>
+      <div style={{ fontSize: 11, color: t.red, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", marginBottom: 4 }}>🪝 Hook - First 2 Seconds</div>
       <div style={{ fontSize: 15, fontWeight: 600, color: t.text }}>{script.hook}</div>
     </div>
 
@@ -430,7 +430,7 @@ function parseTime(str) {
 function parseOverlayTiming(overlay) {
   const timing = overlay.timing || overlay.time || "";
   const text = overlay.text || (typeof overlay === "string" ? overlay : "");
-  const parts = timing.replace(/[\[\]]/g, "").split(/[-–]/);
+  const parts = timing.replace(/[\[\]]/g, "").split(/[--]/);
   const start = parseTime(parts[0]);
   const end = parts[1] ? parseTime(parts[1]) : start + 3;
   return { text, start, end };
@@ -614,7 +614,7 @@ const VideoPreview = ({ script, imageUrl, index }) => {
       {/* Info bar */}
       <div style={{ maxWidth: 280, margin: "10px auto 0", padding: "8px 10px", background: t.bg, borderRadius: 8, border: `1px solid ${t.border}` }}>
         <div style={{ fontSize: 10, color: t.muted, lineHeight: 1.4 }}>
-          <span style={{ color: t.amber, fontWeight: 600 }}>Motion storyboard</span> — animated preview using AI-generated imagery with timed text overlays from the script. Ready for production handoff. For AI-generated video, upgrade to video pipeline (est. $2-8 per clip via Runway/Kling).
+          <span style={{ color: t.amber, fontWeight: 600 }}>Motion storyboard</span> - animated preview using AI-generated imagery with timed text overlays from the script. Ready for production handoff. For AI-generated video, upgrade to video pipeline (est. $2-8 per clip via Runway/Kling).
         </div>
       </div>
     </div>
@@ -675,7 +675,7 @@ export default function AdPipeline() {
       {/* Banner */}
       <div style={{ background: `linear-gradient(90deg, ${t.red}15, ${t.green}15, ${t.blue}15)`, padding: "8px 24px", fontSize: 12, color: t.sec, display: "flex", alignItems: "center", gap: 8, borderBottom: `1px solid ${t.border}` }}>
         <span>🚀</span>
-        <span>Ad Publishing Pipeline — Brief to platform-ready creatives for Meta, Google & TikTok in one generation</span>
+        <span>Ad Publishing Pipeline - Brief to platform-ready creatives for Meta, Google & TikTok in one generation</span>
       </div>
 
       {/* Header */}
@@ -706,7 +706,7 @@ export default function AdPipeline() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
             <div>
               <div style={{ fontSize: 16, fontWeight: 600, color: t.text }}>Creative Brief</div>
-              <div style={{ fontSize: 13, color: t.muted }}>Describe the campaign or select a preset — the Content Factory handles the rest</div>
+              <div style={{ fontSize: 13, color: t.muted }}>Describe the campaign or select a preset - the Content Factory handles the rest</div>
             </div>
           </div>
 
@@ -829,7 +829,7 @@ export default function AdPipeline() {
             {activeTab === "meta" && result.meta && (
               <div>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
-                  <div style={{ fontSize: 13, color: t.muted }}>{result.meta.length} ad variants generated — click individual images or generate all at once</div>
+                  <div style={{ fontSize: 13, color: t.muted }}>{result.meta.length} ad variants generated - click individual images or generate all at once</div>
                   <button
                     onClick={async () => {
                       setGeneratingImages(true);
@@ -871,7 +871,7 @@ export default function AdPipeline() {
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
                     <div>
                       <div style={{ fontSize: 15, fontWeight: 600, color: t.text }}>Animated Storyboard Previews</div>
-                      <div style={{ fontSize: 12, color: t.muted }}>Click to play — timed text overlays on AI-generated imagery with Ken Burns motion</div>
+                      <div style={{ fontSize: 12, color: t.muted }}>Click to play - timed text overlays on AI-generated imagery with Ken Burns motion</div>
                     </div>
                     {!(result.meta || []).some(a => a._generatedImage) && (
                       <div style={{ fontSize: 11, color: t.amber, maxWidth: 250, textAlign: "right" }}>💡 Generate Meta ad images first for full storyboard previews</div>
@@ -927,7 +927,7 @@ export default function AdPipeline() {
             <div style={{ fontSize: 48, marginBottom: 12 }}>🚀</div>
             <div style={{ fontSize: 18, fontWeight: 600, color: t.text, marginBottom: 8 }}>Enter a Brief to Generate Ads</div>
             <div style={{ fontSize: 14, color: t.sec, maxWidth: 450, lineHeight: 1.6 }}>
-              Select a preset campaign or write a custom brief. The Content Factory generates platform-compliant creatives for Meta, Google, and TikTok — with character validation, format specs, and image direction included.
+              Select a preset campaign or write a custom brief. The Content Factory generates platform-compliant creatives for Meta, Google, and TikTok - with character validation, format specs, and image direction included.
             </div>
           </div>
         )}
